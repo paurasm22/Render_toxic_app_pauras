@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: toxic-classifier
+    env: python
+    plan: free
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+    buildCommand: pip install -r requirements.txt
+    buildImage: "python:3.10-slim"
